@@ -11,12 +11,29 @@
         1.配置vue实例,传入配置对象 el data 
         2.符合html规范,加入vue特殊语法
         3.root容器里的代码称之为:vue模板
+        4.容器与实例一一对应
+        5.真实开发时,vue实例一般只有一个,配合组件一起使用。
+        6.{{xxx}}, Js表达式,而且xxx，可以自动读取Data中的所有属性。
+        7.Data的数据发生变化，使用data的数据的模板的数据也随之变化。
+        
+
+        
+        
+        注意区分:js表达式和js语句(js代码)区域
+        1.a
+        2.a+b 加法运算表达式
+        3.demo(1) 函数调用表达式语句
+        语句
+        1.if没有(){} 判断语句
+        2.for(){} 循环语句
     -->
     <!--准备容器-->
-    <div id="root">
-        <h1>hello {{name}} {{address}}</h1>
-    </div>
 
+    
+        <div id="root">
+        <h1>hello {{name}},{{address}},{{2/3}}</h1>
+    </div>
+    
     <script type="text/javascript">
     Vue.config.productionTip =false;//阻止vue启动时生成生产报告
 
@@ -24,15 +41,16 @@
     const x = new Vue({
           el:"#root",//el是元素的意思 element  这是一个id选择器,把实例和容器结合起来. 
           //指定当前的vue实例为哪个容器服务,值为css选择器字符串
-          /*el:document.getElementById("root")//区别.第一种:给选择器,自己找容器   第二种.自己一步步找元素*/
+          /*el:document.getElementById("root")//区别.第一种:给选择器,自己找容器   第二种.自己一步步找元素,然后配置el中*/
           data:{
               name:"word",//word换12行name
               address:"北京"
           }
           //data里面是对象,用来储存数据,数据为el所指定的容器使用.
         })
+
+
+
     </script>
-
-
 </body>
 </html>
