@@ -7,9 +7,14 @@
     <script type="text/javascript" src="./js/vue.js"></script>
 </head>
 <body>
+    <!--
+        1.配置vue实例,传入配置对象 el data 
+        2.符合html规范,加入vue特殊语法
+        3.root容器里的代码称之为:vue模板
+    -->
     <!--准备容器-->
     <div id="root">
-        <h1>hello world</h1>
+        <h1>hello {{name}} {{address}}</h1>
     </div>
 
     <script type="text/javascript">
@@ -17,10 +22,15 @@
 
 //创建vue实例
     const x = new Vue({
-          /*el:"#root"//el是元素的意思 element  这是一个id选择器,把实例和容器结合起来. 
-          //指定当前的vue实例为哪个容器服务,值为css选择器字符串*/
-          el:document.getElementById("root")//区别.第一种:给选择器,自己找容器   第二种.自己一步步找元素
-    })
+          el:"#root",//el是元素的意思 element  这是一个id选择器,把实例和容器结合起来. 
+          //指定当前的vue实例为哪个容器服务,值为css选择器字符串
+          /*el:document.getElementById("root")//区别.第一种:给选择器,自己找容器   第二种.自己一步步找元素*/
+          data:{
+              name:"word",//word换12行name
+              address:"北京"
+          }
+          //data里面是对象,用来储存数据,数据为el所指定的容器使用.
+        })
     </script>
 
 
